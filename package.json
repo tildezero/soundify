@@ -37,11 +37,11 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^0.485.0",
+		"@mediapipe/tasks-vision": "^0.10.22-rc.20250304",
 		"@node-rs/argon2": "^2.0.2",
 		"@oslojs/crypto": "^1.0.1",
 		"@oslojs/encoding": "^1.1.0",
 		"drizzle-orm": "^0.40.0",
-		"lucide-svelte": "^0.485.0",
 		"postgres": "^3.4.5"
 	}
 }
