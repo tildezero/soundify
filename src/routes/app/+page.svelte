@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { Avatar, ProgressRing, Segment, Slider, Switch, Progress } from '@skeletonlabs/skeleton-svelte';
+	import { enhance } from '$app/forms';
 
 	// Common Class Lists
 	const headerClasses = 'space-y-2 pb-2 border-b-2 border-surface-800-200';
@@ -13,6 +14,7 @@
 	let { data }: { data: PageServerData } = $props();
 
 	let goodName = data.user.username.charAt(0).toUpperCase() + data.user.username.slice(1)
+
 </script>
 
 <main class="container mx-auto space-y-4 px-4 py-12">
@@ -49,6 +51,10 @@
     <!--bar crap would go here -->
 	<button onclick={() =>  goto('/app/practice')} class="btn t preset-filled mt-5 text-m font-bold text-center p-x-5 p-y-3">Practice →</button>
 	<button onclick={() =>  goto('/app/learn')} class="btn t preset-filled mt-5 text-m font-bold text-center p-x-5 p-y-3">Learn →</button>
+	<form method='post' action='?/logout' use:enhance>
+		<button class="btn t preset-filled mt-5 text-m font-bold text-center p-x-5 p-y-3">Sign out</button>
+	</form>
+	
 </section>
 
 </main>
