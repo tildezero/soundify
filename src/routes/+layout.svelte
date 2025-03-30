@@ -21,8 +21,8 @@
 </header>
 
 
-<!-- {@render children()} -->
+{@render children()}
 
-<slot />
+<!-- <slot /> -->
 
 
