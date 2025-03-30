@@ -1,9 +1,12 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
+	import {browser} from '$app/environment'
+	import { db } from '$lib/server/db'
 	
 	import { Music } from '@lucide/svelte';
 	import { enhance } from '$app/forms';
 	import { Avatar, ProgressRing, Segment, Slider, Switch } from '@skeletonlabs/skeleton-svelte';
+	import type { PageServerData } from './$types';
 
 	// Common Class Lists
 	const headerClasses = 'space-y-2 pb-2 border-b-2 border-surface-800-200';
@@ -15,6 +18,8 @@
 
 	let cameraOn = $state(false);
 
+	let { data }: { data: PageServerData } = $props();
+
 	function changeColor() {
 		if (iconClass.includes('preset-filled-primary-50-950')) {
 			iconClass.pop();
@@ -25,10 +30,14 @@
 		}
 	}
 
-	window.onmessage = (event) => {
-		if (event.data.startsWith('success')) {
-			alert(`result recieved! accuracy=${event.data.split(" ").at(1)}`)
-		}
+	if (browser) {
+		window.onmessage = (event) => {
+			if (event.data.startsWith('success')) {
+				alert(`result recieved! ${data.user.username} accuracy=${event.data.split(" ").at(1)}`)
+				data.user.
+				goto(`/app/practice/result?accuracy=${event.data.split(" ").at(1)}`)
+			}
+		}	
 	}
 
 
@@ -58,7 +67,12 @@
 		{/if}
 		<button onclick={() => goto('/app/practice/settings')} class="btn t preset-filled mt-10 text-m font-bold text-center ">⚙</button>
 		<button onclick={changeColor} class="btn t preset-filled mt-10 text-m font-bold text-center">Change button color</button>
+
 	</div>
+
+	<iframe src="https://soundify-embed-thing.vercel.app/tracker.html" class="w-11/12 h-11/12" title="hi" allow="camera; microphone"/>
+
+
 </section>
 
 

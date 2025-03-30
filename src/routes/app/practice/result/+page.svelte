@@ -9,6 +9,11 @@
 
 	let color = $state('#bada55');
     let { accuracyPercentage = 87} = $props();
+
+    import { page } from '$app/stores';
+    
+    let accuracy = $page.url.searchParams.get('accuracy');
+
 </script>
 
 <main class="container mx-auto space-y-20 px-4 py-20">
@@ -21,8 +26,8 @@
         <h3 class="h3">Your results: </h3>
         <!--bar crap would go here -->
         <div class="flex w-full flex-col gap-2">
-            <p class="p max-w-prose">Accuracy: {accuracyPercentage}%</p>
-            <Progress value={accuracyPercentage} max={100} meterBg="bg-tertiary-500" />
+            <p class="p max-w-prose">Accuracy: {accuracy}%</p>
+            <Progress value={Number(accuracy)} max={100} meterBg="bg-tertiary-500" />
         </div>
         
         <h3 class="h5 mt-10">Great job!</h3>
