@@ -25,6 +25,12 @@
 		}
 	}
 
+	window.onmessage = (event) => {
+		if (event.data.startsWith('success')) {
+			alert(`result recieved! accuracy=${event.data.split(" ").at(1)}`)
+		}
+	}
+
 
 </script>
 
