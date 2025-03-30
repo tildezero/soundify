@@ -1,6 +1,5 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { enhance } from '$app/forms';
 	import { Avatar, ProgressRing, Segment, Slider, Switch } from '@skeletonlabs/skeleton-svelte';
 
 	// Common Class Lists
@@ -10,21 +9,13 @@
 	let color = $state('#bada55');
 </script>
 
-<main class="container mx-auto space-y-20 px-4 py-20">
+<main class="container mx-auto space-y-20 px-4 py-20 items-center">
 	<!-- -------------------------------------------------------- -->
-	<header class={headerClasses}>
-		<h2 class="h2">Practice </h2>
-	</header>
+		<h3 class="h3 text-center">Settings: </h3>
 	<!-- -------------------------------------------------------- -->
 
 </main>
 <section class="h-screen items-center flex flex-col">
     <!--bar crap would go here -->
-	
-	<div>
-		<button class="btn t preset-filled mt-10 text-m font-bold text-center p-x-5 p-y-3">Begin exercise →</button>
-		<button onclick={() => goto('/app/practice/settings')} class="btn t preset-filled mt-10 text-m font-bold text-center ">⚙</button>
-	</div>
+	<button onclick={() => goto('/app/practice')} class="btn t preset-filled mt-10 text-m font-bold text-center p-x-5 p-y-3">Return →</button>
 </section>
-
-
