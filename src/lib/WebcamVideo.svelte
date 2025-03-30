@@ -9,8 +9,11 @@
 		startCapture();
 	}
 
+	const hasGetUserMedia = () => !!navigator.mediaDevices?.getUserMedia; 
+
+	
 	function startCapture() {
-		// Web カメラのストリームを取得して video 要素に紐付ける
+		// webcam not associated with video element
 		navigator.mediaDevices
 			.getUserMedia({ video: true })
 			.then((mediaStream: MediaStream) => {
@@ -20,13 +23,13 @@
 				}
 			})
 			.catch((err) => {
-				console.error('Web カメラの取得に失敗しました:', err);
+				console.error('Webcam failed to turn on', err);
 			});
 	}
 </script>
 
 <video bind:this={videoElem} playsinline>
-	<!-- Web カメラの入力映像を表示するのでキャプションは存在しない -->
+	<!-- input video displayed, no captions -->
 	<track kind="captions" src="" default />
 </video>
 
@@ -34,6 +37,6 @@
 	video {
 		width: 640px;
 		max-width: 100%;
-		transform: scaleX(-1); /* 映像を左右反転 */
+		transform: scaleX(-1); 
 	}
 </style>
