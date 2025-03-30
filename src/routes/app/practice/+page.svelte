@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import {browser} from '$app/environment'
-	import { db } from '$lib/server/db'
 	
 	import { Music } from '@lucide/svelte';
 	import { enhance } from '$app/forms';
@@ -34,7 +33,6 @@
 		window.onmessage = (event) => {
 			if (event.data.startsWith('success')) {
 				alert(`result recieved! ${data.user.username} accuracy=${event.data.split(" ").at(1)}`)
-				data.user.
 				goto(`/app/practice/result?accuracy=${event.data.split(" ").at(1)}`)
 			}
 		}	
