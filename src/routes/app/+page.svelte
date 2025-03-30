@@ -7,7 +7,7 @@
 	
 
 	let color = $state('#bada55');
-	let { name, accuracyPercentage, lessonsCompleted } = $props();
+	let { name="John", accuracyPercentage=0, lessonsCompleted=13 } = $props();
 </script>
 
 <main class="container mx-auto space-y-4 px-4 py-12">
@@ -15,7 +15,7 @@
 	<header class={headerClasses}>
 		<h1 class="h1">Welcome, {name}! </h1>
 	</header>
-	<p class="p text-left max-w-prose">Get ready to learn, {name}! Your rhythmic journey is on its course! Let's hit 20 exercises!</p>
+	<p class="p text-left ">Get ready to learn, {name}! Your rhythmic journey is on its course! Let's hit 20 exercises!</p>
 	<!-- -------------------------------------------------------- -->
 	<section class="items-left flex flex-col">
 		<header class={headerClasses}>
