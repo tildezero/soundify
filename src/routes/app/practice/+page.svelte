@@ -9,7 +9,7 @@
 	const headerClasses = 'space-y-2 pb-2 border-b-2 border-surface-800-200';
 
 
-	import Camera from './Camera.svelte'
+	// import Camera from './Camera.svelte'
 	
 	let iconClass = $state(['badge-icon', 'w-20', 'h-20', 'preset-filled-primary-500'])
 
@@ -48,7 +48,7 @@
 				<canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
 			</div>
 
-			<Camera />
+			<!-- <Camera /> -->
 		{/if}
 		<button onclick={() => goto('/app/practice/settings')} class="btn t preset-filled mt-10 text-m font-bold text-center ">⚙</button>
 		<button onclick={changeColor} class="btn t preset-filled mt-10 text-m font-bold text-center">Change button color</button>
