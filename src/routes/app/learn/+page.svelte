@@ -12,12 +12,8 @@
 <main class="container mx-auto space-y-20 px-4 py-20">
 	<!-- -------------------------------------------------------- -->
 	<header class={headerClasses}>
-		<h2 class="h2">Practice </h2>
+		<h2 class="h2">Learn </h2>
 	</header>
 	<!-- -------------------------------------------------------- -->
 
 </main>
-<section class="h-screen items-center flex flex-col">
-    <!--bar crap would go here -->
-	<button class="btn t preset-filled mt-10 text-m font-bold text-center p-x-5 p-y-3">Begin exercise →</button>
-</section>
