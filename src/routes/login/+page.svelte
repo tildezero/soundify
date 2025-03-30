@@ -11,7 +11,7 @@
 
 	<div class="card preset-filled-surface-100-900 rounded-xl p-4 m-5 space-y-5">
 		<h2 class="text-center h2">Sign in</h2>
-		<form method="post" use:enhance action="?/register">
+		<form method="post" use:enhance action="?/login">
 			<label class="label">
 				<span class="label-text">Username</span>
 				<input class="input" type="text" placeholder="Username" name="username" id="username" />
