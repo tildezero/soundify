@@ -1,17 +1,34 @@
 <script lang="ts">
 	import type { HandLandmarkerResult } from '@mediapipe/tasks-vision';
+	import { FilesetResolver, HandLandmarker } from "@mediapipe/tasks-vision";
 	import WebcamVideo from '$lib/WebcamVideo.svelte';
 	import { startRecognition } from '$lib/recognizer';
 
-	let videoElem: HTMLVideoElement | undefined = $state(undefined);
+	let video: HTMLVideoElement | undefined = $state(undefined);
 	let buttonElem: HTMLButtonElement | undefined = $state(undefined);
 	let isWebcamEnabled = $state(false);
+	let handLandmarker = undefined; 
 
-	// $: if (isWebcamEnabled) {
-	// 	startRecognition(videoElem, processResult);
-	// 	buttonElem.disabled = true;
-	// 	//buttonElem.style.display = 'none'; // 有効化したらボタンを消す
-	// }
+
+	const createHandLandmarker() = async () => {
+	const vision = await FilesetResolver.forVisionTasks(
+		"https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
+	);
+	handLandmarker = await HandLandmarker.createFromOptions(vision, {
+		baseOptions: {
+			modelAssetPath:
+				`https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`,
+			delegate: 'GPU'
+		},
+		numHands: 2,
+		runningMode: 'VIDEO'
+	});
+	}
+	createHandLandmarker();
+
+	const hasGet
+
+
 
 	$effect(() => {
 		if (isWebcamEnabled) {
