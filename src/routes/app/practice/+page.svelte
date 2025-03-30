@@ -57,7 +57,6 @@
 			<!-- <Camera /> -->
 		{/if}
 		<button onclick={() => goto('/app/practice/settings')} class="btn t preset-filled mt-10 text-m font-bold text-center ">⚙</button>
-		<button onclick={changeColor} class="btn t preset-filled mt-10 text-m font-bold text-center">Change button color</button>
 	</div>
 </section>
 
