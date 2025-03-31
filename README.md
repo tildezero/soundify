@@ -1,38 +1,16 @@
-# sv
+# Soundify
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Sightreading made easy.
 
-## Creating a project
+## Inspiration
 
-If you're seeing this, you've probably already done this step. Congrats!
+Most of us have learned music theory before, often through sight reading platforms like Sight Reading Factory. However, in loud classrooms setting, these programs are difficult to use due to their reliance on sound. Furthermore, young children may not be apt to understanding music notation and would benefit from an accessible activity to bolster their rhythmic skills.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## What it does
 
-# create a new project in my-app
-npx sv create my-app
-```
+The web app generates a rhythm that is illustrated in a scrolling bar which the user must tap out using their hands. The webcam then captures finger movements to detect rhythm accuracy.
 
-## Developing
+## How we built it
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+We used Svelte for the web frontend, and Mediapipe for the hand recognition portion.
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
